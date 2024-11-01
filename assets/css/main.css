@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {    
+    background-image: url('~/assets/images/background.webp');
+    @apply bg-cover bg-center;
+}
+
+@font-face {
+    font-family: 'starJedi';
+    src: url('assets/fonts/Starjedi.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+ 
+@font-face {
+    font-family: 'Starjhol';
+    src: url('assets/fonts/starjhol.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+    
