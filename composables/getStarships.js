@@ -7,7 +7,7 @@ export function getStarships() {
     const error = ref(null);
 
     // URL de la imagen por defecto (asegúrate de que esta imagen exista)
-    const defaultImageUrl = 'assets/img/starships/logo.jpg'; 
+    const defaultImageUrl = 'assets/images/logoStarWars.webp'; 
 
     // Función para construir la URL de la imagen de Star Wars Visual Guide
     function getStarshipImageUrl(id) {
@@ -17,7 +17,7 @@ export function getStarships() {
     // Función para obtener el ID de la nave a partir de la URL de SWAPI
     function extractStarshipId(url) {
         const idMatch = url.match(/\/(\d+)\/$/);
-        return idMatch ? idMatch[1] : null;
+        return idMatch ? idMatch[1] : defaultImageUrl;
     }
 
     // Función para obtener naves de SWAPI con sus imágenes
@@ -36,10 +36,9 @@ export function getStarships() {
 
             // Asigna las naves con imágenes al array `starships`
             starships.value = starshipsWithImages;
-            console.log('Starships fetched:', starships.value); // Log para ver qué datos se están obteniendo
         } catch (e) {
             error.value = e;
-            console.error('Error fetching starships:', e); // Log del error
+  
         } finally {
             isLoading.value = false;
         }
